@@ -22,50 +22,54 @@
 		<button class="add-item" id="add-item">+</button>
 
         <div class="add-window">
-            <form class="input-wrap" id="add-form">
-                <div>
-                    <label for="item-name">Name</label>
-                    <input type="text" id="item-name" name="item-name" required>
-                </div>
-                <div>
-                    <label for="item-status">Status</label>
-                    <select name="status" id="item-status">
-                        <option>Watching</option>
-                        <option>Completed</option>
-                        <option>On-Hold</option>
-                        <option>Dropped</option>
-                        <option>Plan to Watch</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="item-score">Score</label>
-                    <input type="number" id="item-score" name="item-score" min="1" max="10">
-                </div>
-                <div>
-                    <div>
-                        <label for="item-episodes-watched">Episodes Watched</label>
-                        <input type="number" id="item-episodes-watched" name="item-episodes-watched" min="0" required>
+            <form  id="add-form">
+                <div class="input-wrap">
+                    <div class="input-item">
+                        <label for="item-name">Name</label>
+                        <input type="text" id="item-name" name="item-name" required>
                     </div>
-                    <div>
-                        <label for="item-episodes-total">Episodes Total</label>
-                        <input type="number" id="item-episodes-total" name="item-episodes-total" min="0" required>
+                    <div class="input-item">
+                        <label for="item-status">Status</label>
+                        <select name="status" id="item-status">
+                            <option>Watching</option>
+                            <option>Completed</option>
+                            <option>On-Hold</option>
+                            <option>Dropped</option>
+                            <option>Plan to Watch</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="input-item">
+                        <label for="item-score">Score</label>
+                        <input type="number" id="item-score" name="item-score" min="1" max="10">
+                    </div>
+                    <div class="input-duo">
+                        <div class="input-item date-ep">
+                            <label for="item-episodes-watched">Episodes Watched</label>
+                            <input type="number" id="item-episodes-watched" name="item-episodes-watched" min="0" required>
+                        </div>
+                        <div class="input-item date-ep">
+                            <label for="item-episodes-total">Episodes Total</label>
+                            <input type="number" id="item-episodes-total" name="item-episodes-total" min="0" required>
+                        </div>
+                    </div>
+                    <div class="input-duo">
+                        <div class="input-item date-ep">
+                            <label for="item-start-date">Start Date</label>
+                            <input type="date" id="item-start-date" name="item-start-date">
+                        </div>
+                        <div class="input-item date-ep">
+                            <label for="item-finish-date">Finish Date</label>
+                            <input type="date" id="item-finish-date" name="item-finish-date">
+                        </div>
+                    </div>
+                    <div class="input-item">
+                        <label for="item-url">Image URL</label>
+                        <input type="text" id="item-url" name="item-url">
+                    </div>
                 <div>
-                    <div>
-                        <label for="item-start-date">Start Date</label>
-                        <input type="date" id="item-start-date" name="item-start-date">
-                    </div>
-                    <div>
-                        <label for="item-finish-date">Finish Date</label>
-                        <input type="date" id="item-finish-date" name="item-finish-date">
-                    </div>
-                </div>
                 <div>
-                    <label for="item-url">Image URL</label>
-                    <input type="text" id="item-url" name="item-url">
+                    <button id="submit-btn">Submit</button>
                 </div>
-                <button id="submit-btn">Submit</button>
             </form>
         </div>
 		

@@ -43,7 +43,45 @@ p{
 }
 
 /* add window */
+.add-window{
+    margin: 0 auto;
 
+    background: darkblue;
+    color: whitesmoke;
+    width: 95%;
+    
+}
+
+.input-wrap{
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-duo{
+    display: flex;
+    gap: 5px;
+}
+
+.date-ep{
+    width: 50%;
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+}
+
+#submit-btn{
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+input,select{
+    border-radius: 4px;
+}
 
 
 /* add button */
