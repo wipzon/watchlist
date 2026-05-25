@@ -25,13 +25,13 @@ p{
 
 .item-frame{
 	padding: 0 10px;
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	display: flex;
 	gap: 10px;
 }
 
 .item-info{
-	border: 2px dotted red;
+	/* border: 2px dotted red; */
 	
 }
 
