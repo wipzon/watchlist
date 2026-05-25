@@ -2,6 +2,7 @@
 <html>
 
 	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +17,57 @@
 	
 	
 		<div id="item-list">
-			
 		</div>
 		
-		<button class="add-item">+</button>
+		<button class="add-item" id="add-item">+</button>
+
+        <div class="add-window">
+            <form class="input-wrap" id="add-form">
+                <div>
+                    <label for="item-name">Name</label>
+                    <input type="text" id="item-name" name="item-name" required>
+                </div>
+                <div>
+                    <label for="item-status">Status</label>
+                    <select name="status" id="item-status">
+                        <option>Watching</option>
+                        <option>Completed</option>
+                        <option>On-Hold</option>
+                        <option>Dropped</option>
+                        <option>Plan to Watch</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="item-score">Score</label>
+                    <input type="number" id="item-score" name="item-score" min="1" max="10">
+                </div>
+                <div>
+                    <div>
+                        <label for="item-episodes-watched">Episodes Watched</label>
+                        <input type="number" id="item-episodes-watched" name="item-episodes-watched" min="0" required>
+                    </div>
+                    <div>
+                        <label for="item-episodes-total">Episodes Total</label>
+                        <input type="number" id="item-episodes-total" name="item-episodes-total" min="0" required>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="item-start-date">Start Date</label>
+                        <input type="date" id="item-start-date" name="item-start-date">
+                    </div>
+                    <div>
+                        <label for="item-finish-date">Finish Date</label>
+                        <input type="date" id="item-finish-date" name="item-finish-date">
+                    </div>
+                </div>
+                <div>
+                    <label for="item-url">Image URL</label>
+                    <input type="text" id="item-url" name="item-url">
+                </div>
+                <button id="submit-btn">Submit</button>
+            </form>
+        </div>
 		
 		<script src="index.js" type="module"></script>
 	</body>
