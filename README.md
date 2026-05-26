@@ -5,7 +5,6 @@ things tracker
 1.
 - dark mode
 - klikanie poza oknem zamyka je
-- potwierdzenie usuniecia
 2.
 - zakladki w zaleznossci od statusu
 - strona do mangi
