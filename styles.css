@@ -91,14 +91,57 @@ input,select{
 }
 
 .trash-icon-container{
-    text-align: right;
+    display: flex;
+    margin-left: auto;
+
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
 }
 
 .trash-icon{
-    height: 35px;
-    width: 35px;
+    
+    margin: auto;
+    height: 100%;
 }
 
+/* delete confirm button */
+.delete-confirm-conrainer{
+    background: darkgreen;
+    display: none;
+    text-align: center;
+
+    width: 60%;
+    height: 180px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+
+h3{
+    margin-top: 40px;
+}
+
+.delete-confirm-btns{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.delete-confirm-btns button{
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    color: black;
+
+    border: none;
+    border-radius: 4px;
+}
 
 /* add button */
 

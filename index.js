@@ -93,9 +93,23 @@ function editAnime(id, updatedData){
 }
 
 trashButton.addEventListener('click',function(){
-    deleteEntry(selectedId)
-    selectedId = null
-    addWindow.style.display = 'none'
+    const deleteConfirm = document.getElementById('delete-confirm-conrainer')
+    const deleteConfirmYes = document.getElementById('delete-comfirm-yes')
+    const deleteConfirmNo = document.getElementById('delete-comfirm-no')
+
+    deleteConfirm.style.display = 'block'
+    deleteConfirmYes.addEventListener('click',function(){
+        deleteEntry(selectedId)
+        selectedId = null
+        deleteConfirm.style.display = 'none'
+        addWindow.style.display = 'none'
+    })
+    deleteConfirmNo.addEventListener('click',function(){
+        deleteConfirm.style.display = 'none'
+    })
+    
+
+    
 })
 
 function deleteEntry(id){
