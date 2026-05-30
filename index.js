@@ -26,11 +26,12 @@ function renderList(){
 	}
 }
 document.addEventListener('click',function(e){
-				if(addWindow.style.display === 'none') return
-				if(!addWindow.contains(e.target) && !addButton.contains(e.target)){
-								addWindow.style.display = 'none'
-								selectedId = null
-								addForm.reset()
+				if(addWindow.style.display === 'block'){
+								if(!addWindow.contains(e.target) && !addButton.contains(e.target)){
+												addWindow.style.display = 'none'
+												selectedId = null
+												addForm.reset()
+								}
 				}
 })
 
