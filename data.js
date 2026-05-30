@@ -7,7 +7,7 @@ export const animeList = [
 	episodesWatched: 12,
 	episodesTotal: 12,
 	dateStarted: "2025-12-26",
-	dateFinished: "2025-12-24",
+	dateFinished: "2025-12-29",
     image: "https://cdn.myanimelist.net/images/anime/1812/136764l.jpg",
 	},
 ]

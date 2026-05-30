@@ -5,6 +5,9 @@ const addButton = document.getElementById('add-item')
 const addWindow = document.getElementById('add-window')
 const addForm = document.getElementById('add-form')
 const trashButton = document.getElementById('trash-btn')
+const deleteConfirm = document.getElementById('delete-confirm-conrainer')
+const deleteConfirmYes = document.getElementById('delete-comfirm-yes')
+const deleteConfirmNo = document.getElementById('delete-comfirm-no')
 
 let animeList = JSON.parse(localStorage.getItem("animeList")) || defaultList
 let selectedId = null
@@ -61,17 +64,7 @@ addButton.addEventListener('click',function(){
 
 addForm.addEventListener('submit',function(e){
     e.preventDefault()
-    const addFormData = new FormData(addForm)
-    const data = {
-        name: addFormData.get('item-name'),
-        status: addFormData.get('status'),
-        score: addFormData.get('item-score'),
-        episodesWatched: addFormData.get('item-episodes-watched'),
-        episodesTotal: addFormData.get('item-episodes-total'),
-        dateStarted: addFormData.get('item-start-date'),
-        dateFinished: addFormData.get('item-finish-date'),
-        image: addFormData.get('item-url'),
-    }
+    const data = getFormData()
 
     if(selectedId){
         editAnime(selectedId, data)
@@ -83,6 +76,20 @@ addForm.addEventListener('submit',function(e){
     addWindow.style.display = 'none'
     addForm.reset()
 })
+
+function getFormData(){
+    const addFormData = new FormData(addForm)
+    return {
+        name: addFormData.get('item-name'),
+        status: addFormData.get('status'),
+        score: addFormData.get('item-score'),
+        episodesWatched: addFormData.get('item-episodes-watched'),
+        episodesTotal: addFormData.get('item-episodes-total'),
+        dateStarted: addFormData.get('item-start-date'),
+        dateFinished: addFormData.get('item-finish-date'),
+        image: addFormData.get('item-url'),
+    }
+}
 
 function addAnime(data){
     animeList.push({
@@ -102,10 +109,6 @@ function editAnime(id, updatedData){
 }
 
 trashButton.addEventListener('click',function(){
-    const deleteConfirm = document.getElementById('delete-confirm-conrainer')
-    const deleteConfirmYes = document.getElementById('delete-comfirm-yes')
-    const deleteConfirmNo = document.getElementById('delete-comfirm-no')
-
     deleteConfirm.style.display = 'block'
     deleteConfirmYes.addEventListener('click',function(){
         deleteEntry(selectedId)

@@ -25,14 +25,8 @@ p{
 
 .item-frame{
 	padding: 5px 10px;
-	/* border: 2px solid blue; */
 	display: flex;
 	gap: 10px;
-}
-
-.item-info{
-	/* border: 2px dotted red; */
-	
 }
 
 .item-img{
@@ -97,6 +91,8 @@ input,select{
     height: 35px;
     width: 35px;
     border-radius: 50%;
+
+    cursor: pointer;
 }
 
 .trash-icon{
