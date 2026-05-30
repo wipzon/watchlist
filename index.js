@@ -25,6 +25,13 @@ function renderList(){
 			</div>`
 	}
 }
+document.addEventListener('click',function(e){
+				if(addWindow.contains(e.target){
+								addWindow.style.display = 'none'
+								selectedId = null
+								addForm.reset()
+				}
+})
 
 itemList.addEventListener('click',function(e){
     const frame = e.target.closest('.item-frame')
