@@ -26,7 +26,7 @@ function renderList(){
 	}
 }
 document.addEventListener('click',function(e){
-				if(!addWindow.contains(e.target) && /*!addButton.contains(e.target))*/{
+				if(!addWindow.contains(e.target) && /*!addButton.contains(e.target)*/){
 								addWindow.style.display = 'none'
 								selectedId = null
 								addForm.reset()
