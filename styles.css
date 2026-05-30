@@ -43,7 +43,8 @@ p{
     background: darkblue;
     color: whitesmoke;
     width: 90%;
-    height: 410px;
+    max-height: 410px;
+    overflow-y: auto;
     
     position: fixed;
     left: 0;
@@ -102,13 +103,14 @@ input,select{
 }
 
 /* delete confirm button */
-.delete-confirm-conrainer{
+.delete-confirm-container{
     background: darkgreen;
     display: none;
     text-align: center;
 
     width: 60%;
-    height: 180px;
+    max-height: 180px;
+    overflow-y: auto;
 
     position: fixed;
     left: 0;

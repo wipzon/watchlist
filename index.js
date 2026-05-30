@@ -5,9 +5,9 @@ const addButton = document.getElementById('add-item')
 const addWindow = document.getElementById('add-window')
 const addForm = document.getElementById('add-form')
 const trashButton = document.getElementById('trash-btn')
-const deleteConfirm = document.getElementById('delete-confirm-conrainer')
-const deleteConfirmYes = document.getElementById('delete-comfirm-yes')
-const deleteConfirmNo = document.getElementById('delete-comfirm-no')
+const deleteConfirm = document.getElementById('delete-confirm-container')
+const deleteConfirmYes = document.getElementById('delete-confirm-yes')
+const deleteConfirmNo = document.getElementById('delete-confirm-no')
 
 let animeList = JSON.parse(localStorage.getItem("animeList")) || defaultList
 let selectedId = null
@@ -18,14 +18,14 @@ function renderList(){
 	itemList.innerHTML = ''
 
 	for(let anime of animeList){
-		itemList.innerHTML += `
+		itemList.insertAdjacentHTML('beforeend',`
 			<div id="${anime.id}" class="item-frame">
 				<img class="item-img" src="${anime.image}">
 				<div class="item-info">
 					<h2>${anime.name}</h2>
 					<p>${anime.episodesWatched}/${anime.episodesTotal} episodes</p>
 				</div>
-			</div>`
+			</div>`)
 	}
 }
 
@@ -99,36 +99,37 @@ function addAnime(data){
         id: Date.now(),
         ...data
     })
-    localStorage.setItem("animeList",JSON.stringify(animeList))
-    renderList()
+    saveList()
 }
 
 function editAnime(id, updatedData){
     animeList = animeList.map(anime => 
         anime.id === id ? { ...anime, ...updatedData } : anime
     )
+    saveList()
+}
+
+function saveList(){
     localStorage.setItem("animeList", JSON.stringify(animeList))
     renderList()
 }
 
+deleteConfirmYes.addEventListener('click',function(){
+    deleteEntry(selectedId)
+    selectedId = null
+    deleteConfirm.style.display = 'none'
+    addWindow.style.display = 'none'
+    addForm.reset()
+})
+deleteConfirmNo.addEventListener('click',function(){
+    deleteConfirm.style.display = 'none'
+})
+
 trashButton.addEventListener('click',function(){
     deleteConfirm.style.display = 'block'
-    deleteConfirmYes.addEventListener('click',function(){
-        deleteEntry(selectedId)
-        selectedId = null
-        deleteConfirm.style.display = 'none'
-        addWindow.style.display = 'none'
-    })
-    deleteConfirmNo.addEventListener('click',function(){
-        deleteConfirm.style.display = 'none'
-    })
-    
-
-    
 })
 
 function deleteEntry(id){
     animeList = animeList.filter(anime => anime.id !== id)
-    localStorage.setItem("animeList", JSON.stringify(animeList))
-    renderList()
+    saveList()
 }
