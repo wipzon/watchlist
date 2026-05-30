@@ -25,7 +25,7 @@ function renderList(){
 			</div>`
 	}
 }
-document.addEventListener('click',function(e){
+/*document.addEventListener('click',function(e){
 				if(addWindow.style.display === 'block'){
 								if(!addWindow.contains(e.target) && !addButton.contains(e.target)){
 												addWindow.style.display = 'none'
@@ -33,7 +33,7 @@ document.addEventListener('click',function(e){
 												addForm.reset()
 								}
 				}
-})
+})*/
 
 itemList.addEventListener('click',function(e){
     const frame = e.target.closest('.item-frame')
