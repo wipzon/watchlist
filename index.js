@@ -67,8 +67,8 @@ addForm.addEventListener('submit',function(e){
         score: addFormData.get('item-score'),
         episodesWatched: addFormData.get('item-episodes-watched'),
         episodesTotal: addFormData.get('item-episodes-total'),
-        startDate: addFormData.get('item-start-date'),
-        finishDate: addFormData.get('item-finish-date'),
+        dateStarted: addFormData.get('item-start-date'),
+        dateFinished: addFormData.get('item-finish-date'),
         image: addFormData.get('item-url'),
     }
 
