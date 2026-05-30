@@ -26,7 +26,7 @@ function renderList(){
 	}
 }
 document.addEventListener('click',function(e){
-				if(addWindow.style === 'none') return
+				if(addWindow.style.display === 'none') return
 				if(!addWindow.contains(e.target)){
 								addWindow.style.display = 'none'
 								selectedId = null
