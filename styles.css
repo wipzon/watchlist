@@ -145,7 +145,7 @@ h3{
 
 /* add button */
 
-.add-item{
+.bottom-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,6 +167,6 @@ h3{
 	bottom: 20px;
 }
 
-.add-item:active,.add-item:focus{
+.bottom-btn:active,.bottom-btn:focus{
     background: blue;
 }
